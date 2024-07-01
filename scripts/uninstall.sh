@@ -2,27 +2,16 @@
 
 set -ex
 
-systemctl stop docker.service
-systemctl stop docker.socket
-systemctl stop containerd.service
+systemctl stop crio.service
 
-systemctl disable containerd.service
-systemctl disable docker.socket 
-systemctl disable docker.service 
+systemctl disable crio.service
 
-rm -rf /etc/systemd/system/containerd.service /etc/systemd/system/docker.socket /etc/systemd/system/docker.service
+rm -rf /etc/systemd/system/crio.service
 
-rm -rf /usr/local/bin/docker /usr/local/bin/dockerd /usr/local/bin/docker-init /usr/local/bin/docker-proxy /usr/libexec/docker/cli-plugins/docker-buildx
-rm -rf /usr/local/bin/nerdctl
-rm -rf /usr/local/bin/ctr /usr/local/bin/containerd /usr/local/bin/containerd-shim /usr/local/bin/containerd-shim-runc-v2
-rm -rf /usr/local/bin/runc
+rm -rf /opt/bin/crun
 
-rm -rf /usr/bin/docker /usr/bin/dockerd /usr/bin/docker-init /usr/bin/docker-proxy
-rm -rf /usr/bin/nerdctl
-rm -rf /usr/bin/ctr /usr/bin/containerd /usr/bin/containerd-shim /usr/bin/containerd-shim-runc-v2
-rm -rf /usr/bin/runc
+rm -rf /opt/bin/crictl
 
-rm -rf /opt/bin/docker /opt/bin/dockerd /opt/bin/docker-init /opt/bin/docker-proxy
-rm -rf /opt/bin/nerdctl
-rm -rf /opt/bin/ctr /opt/bin/containerd /opt/bin/containerd-shim /opt/bin/containerd-shim-runc-v2
-rm -rf /opt/bin/runc
+rm -rf /opt/bin/conmon /opt/bin/crio /opt/bin/pinns
+
+rm -rf /opt/cni/bin

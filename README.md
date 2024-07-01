@@ -11,25 +11,25 @@ sudo curl -sfL https://cache.wodcloud.com/kubernetes/k8s/crio/install.sh | sh -
 ```bash
 # HTTPS服务器
 HTTP_SERVER="https://cache.wodcloud.com"
-# 平台架构 amd64 arm64 ppc64le mips64le loong64
+# 平台架构 amd64 arm64
 TARGET_ARCH="amd64"
-# DOCKER版本
-TARGET_VERSION="26.1.0"
+# 台版本
+TARGET_VERSION="v1.30.1"
 
-mkdir -p /opt/docker
+mkdir -p /opt/crio
 # 下载文件
-# docker-$DOCKER_VERSION.tgz 68MB
-curl $HTTP_SERVER/kubernetes/k8s/docker/$TARGET_ARCH/docker-$DOCKER_VERSION.tgz > /opt/docker/docker-$DOCKER_VERSION.tgz
+# crio-$TARGET_VERSION.tgz 68MB
+curl $HTTP_SERVER/kubernetes/k8s/crio/$TARGET_ARCH/crio-$TARGET_VERSION.tgz > /opt/crio/crio-$TARGET_VERSION.tgz
 # 下载文件
 # install.sh
-curl $HTTP_SERVER/kubernetes/k8s/docker/install.sh > /opt/docker/install.sh
+curl $HTTP_SERVER/kubernetes/k8s/crio/install.sh > /opt/crio/install.sh
 
-# 安装Docker
-bash /opt/docker/install.sh
+# 安装crio
+bash /opt/crio/install.sh
 ```
 
-## 卸载 Docker
+## 卸载 crio
 
 ```bash
-sudo curl -sfL https://cache.wodcloud.com/kubernetes/k8s/docker/uninstall.sh | sh -
+sudo curl -sfL https://cache.wodcloud.com/kubernetes/k8s/crio/uninstall.sh | sh -
 ```
