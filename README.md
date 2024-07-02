@@ -17,11 +17,9 @@ TARGET_ARCH="amd64"
 TARGET_VERSION="v1.30.1"
 
 mkdir -p /opt/crio
-# 下载文件
-# crio-$TARGET_VERSION.tgz 68MB
+# 下载资源文件
 curl $HTTP_SERVER/kubernetes/k8s/crio/$TARGET_ARCH/crio-$TARGET_VERSION.tgz > /opt/crio/crio-$TARGET_VERSION.tgz
-# 下载文件
-# install.sh
+# 下载安装脚本
 curl $HTTP_SERVER/kubernetes/k8s/crio/install.sh > /opt/crio/install.sh
 
 # 安装crio

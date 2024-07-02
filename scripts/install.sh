@@ -96,6 +96,13 @@ if ! [ -e /usr/lib/systemd/system/crio.service ]; then
   sed -i "s/kubelet.service/k8s-kubelet.service/g" /etc/systemd/system/crio.service
 fi
 
+if ! (grep -q 'PATH=' /etc/default/crio); then
+  cat >>/etc/default/crio <<-EOF
+
+PATH=/opt/bin:$PATH
+EOF
+fi
+
 systemctl daemon-reload
 
 if systemctl is-active --quiet crio.service; then
