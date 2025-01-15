@@ -24,3 +24,12 @@ mkdir -p .tmp/cri-o-v1.30.8-arm64 && \
 tar -xzvf .tmp/cri-o.amd64.v1.30.8.tar.gz -C .tmp/cri-o-v1.30.8-amd64/ && \
 tar -xzvf .tmp/cri-o.arm64.v1.30.8.tar.gz -C .tmp/cri-o-v1.30.8-arm64/
 ```
+
+## debug
+
+需要提前安装nsenter
+
+```bash
+apt update
+apt install -y util-linux
+```

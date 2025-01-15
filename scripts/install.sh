@@ -71,7 +71,7 @@ systemctl daemon-reload
 # crio , 初始化配置
 if ! [ -e /etc/crio/10-crio.conf ]; then
   mkdir -p /etc/crio/
-  cp /opt/crio/${CRIO_VERSION}/etc/crio/10-crio.conf /etc/crio/10-crio.conf
+  cp /opt/crio/${CRIO_VERSION}/etc/crio/10-crio.conf /etc/crio/crio.conf.d/10-crio.conf
   cp /opt/crio/${CRIO_VERSION}/etc/crio/policy.json /etc/crio/policy.json
   mkdir -p /usr/local/share/oci-umount/oci-umount.d
   cp /opt/crio/${CRIO_VERSION}/etc/crio/crio-umount.conf /usr/local/share/oci-umount/oci-umount.d/crio-umount.conf
