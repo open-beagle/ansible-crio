@@ -16,8 +16,9 @@ curl \
 tar -xzvf .tmp/cri-o.$BUILD_ARCH.$BUILD_VERSION.tar.gz -C .tmp/cri-o-$BUILD_VERSION-$BUILD_ARCH
 
 mkdir -p dist/linux-$BUILD_ARCH/bin/
+mkdir -p dist/linux-$BUILD_ARCH/cni-plugins/
 mkdir -p dist/linux-$BUILD_ARCH/etc/crio/
 cp -r .tmp/cri-o-$BUILD_VERSION-$BUILD_ARCH/cri-o/bin/* dist/linux-$BUILD_ARCH/bin/
-cp -r .tmp/cri-o-$BUILD_VERSION-$BUILD_ARCH/cri-o/cni-plugins/* dist/linux-$BUILD_ARCH/bin/
+cp -r .tmp/cri-o-$BUILD_VERSION-$BUILD_ARCH/cri-o/cni-plugins/* dist/linux-$BUILD_ARCH/cni-plugins/
 cp -r .tmp/cri-o-$BUILD_VERSION-$BUILD_ARCH/cri-o/contrib/* dist/linux-$BUILD_ARCH/etc/crio/
 cp -r .tmp/cri-o-$BUILD_VERSION-$BUILD_ARCH/cri-o/etc/* dist/linux-$BUILD_ARCH/etc/crio/
