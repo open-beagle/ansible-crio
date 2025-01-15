@@ -28,7 +28,7 @@ steps:
       - fetch
 
   - name: crio-amd64
-    image: registry-vpc.cn-qingdao.aliyuncs.com/wod/alpine:3
+    image: registry-vpc.cn-qingdao.aliyuncs.com/wod/curl:alpine
     environment:
       BUILD_ARCH: amd64
       BUILD_VERSION: v1.30.8
@@ -61,7 +61,7 @@ steps:
       - fetch
 
   - name: crio-arm64
-    image: registry-vpc.cn-qingdao.aliyuncs.com/wod/alpine:3
+    image: registry-vpc.cn-qingdao.aliyuncs.com/wod/curl:alpine
     environment:
       BUILD_ARCH: arm64
       BUILD_VERSION: v1.30.8
