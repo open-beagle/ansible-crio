@@ -78,6 +78,8 @@ if ! [ -e /etc/crio/10-crio.conf ]; then
   cp /opt/crio/${CRIO_VERSION}/etc/crio/crictl.yaml /etc/crictl.yaml
   mkdir -p /etc/containers/registries.conf.d
   cp /opt/crio/${CRIO_VERSION}/etc/crio/registries.conf /etc/containers/registries.conf.d/registries.conf
+  mkdir -p /etc/sysconfig/
+  cp /opt/crio/${CRIO_VERSION}/etc/crio/crio /etc/sysconfig/crio
 fi
 
 # cni ， 初始化配置
