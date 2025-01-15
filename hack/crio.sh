@@ -9,7 +9,7 @@ BUILD_ARCH="${BUILD_ARCH:-amd64}"
 # DOCKER版本
 BUILD_VERSION="${BUILD_VERSION:-v1.30.8}"
 
-mkdir -p .tmp/
+mkdir -p .tmp/cri-o-$BUILD_VERSION-$BUILD_ARCH
 curl \
   -o .tmp/cri-o.$BUILD_ARCH.$BUILD_VERSION.tar.gz \
   -fL https://cache.ali.wodcloud.com/vscode/crio/cri-o.$BUILD_ARCH.$BUILD_VERSION.tar.gz
